@@ -20,19 +20,19 @@ app.set('View engine', 'hbs');
 //Middleware
 
 
-app.use((req, res, next) => {
-    var now = new Date().toString();
-    var log = `${now}: ${req.method} ${req.url}`;
+// app.use((req, res, next) => {
+//     var now = new Date().toString();
+//     var log = `${now}: ${req.method} ${req.url}`;
 
-    console.log(log);
-    fs.appendFile('server.log', log + '\n', (err) => {
-        if(err){
-            console.log('Unable to append to server.log');
-        }
-    });
+//     console.log(log);
+//     fs.appendFile('server.log', log + '\n', (err) => {
+//         if(err){
+//             console.log('Unable to append to server.log');
+//         }
+//     });
 
-    next();
-});
+//     next();
+// });
 
 // app.use((req, res, next) => {
 
@@ -58,10 +58,10 @@ app.get('/about', (req, res) => {
     });
 });
 
-app.get('/project', (req, res) => {
+app.get('/projects', (req, res) => {
 
-    res.render('project.hbs', {
-        pageTitle: 'Project Page'
+    res.render('projects.hbs', {
+        pageTitle: 'Projects'
     });
 });
 
