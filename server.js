@@ -47,7 +47,7 @@ app.get('/', (req, res) => {
 
     res.render('home.hbs',{
         pageTitle: 'HomePage',
-        welcomeMessage: 'Welcome to My Site',
+        welcomeMessage: 'Welcome to Node App',
     });
 });
 
@@ -57,6 +57,14 @@ app.get('/about', (req, res) => {
         pageTitle: 'About Page'
     });
 });
+
+app.get('/project', (req, res) => {
+
+    res.render('project.hbs', {
+        pageTitle: 'Project Page'
+    });
+});
+
 
 app.get('/bad', (req, res) => {
     res.send({
